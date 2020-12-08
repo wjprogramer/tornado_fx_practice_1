@@ -14,6 +14,6 @@ class MainView : View("Hello TornadoFX") {
         top<TopView>()
         middleView1.root
         middleView2.root
-        bottom<BottomView>()
+        bottom<FormView>()
     }
 }
