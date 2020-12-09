@@ -28,6 +28,17 @@ class FormView: View() {
                     input.value = ""
                 }
             }
+
+            button("Commit") {
+                action {
+                    // 其他: runAsyncWithProgress
+                    runAsync {
+                        controller.writeToDb(input.value)
+                    } ui { msg ->
+                        input.value = msg
+                    }
+                }
+            }
         }
     }
 }

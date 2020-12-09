@@ -7,7 +7,8 @@ class MyController: Controller() {
 
     val values = FXCollections.observableArrayList("Alpha","Beta","Gamma","Delta")
 
-    fun writeToDb(inputValue: String) {
+    fun writeToDb(inputValue: String): String {
         println("Writing $inputValue to database!")
+        return "Complete Commit"
     }
 }
