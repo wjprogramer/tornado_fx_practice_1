@@ -47,6 +47,12 @@ class FormView: View() {
                     find<MyFragment>().openModal(stageStyle = StageStyle.UTILITY)
                 }
             }
+
+            button("Open editor") {
+                action {
+                    openInternalWindow<MyFragment>()
+                }
+            }
         }
     }
 }
