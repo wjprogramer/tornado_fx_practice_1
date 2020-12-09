@@ -1,7 +1,9 @@
 package com.example.demo.view
 
 import com.example.demo.controller.MyController
+import com.example.demo.fragment.MyFragment
 import javafx.beans.property.SimpleStringProperty
+import javafx.stage.StageStyle
 import tornadofx.*
 
 class FormView: View() {
@@ -37,6 +39,12 @@ class FormView: View() {
                     } ui { msg ->
                         input.value = msg
                     }
+                }
+            }
+
+            button("Open Modal") {
+                action {
+                    find<MyFragment>().openModal(stageStyle = StageStyle.UTILITY)
                 }
             }
         }
