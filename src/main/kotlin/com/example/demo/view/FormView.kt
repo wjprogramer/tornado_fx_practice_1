@@ -53,6 +53,17 @@ class FormView: View() {
                     openInternalWindow<MyFragment>()
                 }
             }
+
+            button("Go to HomeView") {
+                action {
+                    // ## Simple
+                    // replaceWith<HomeView>()
+
+                    // ## Transition
+                    replaceWith(HomeView::class, ViewTransition.Slide(0.3.seconds, ViewTransition.Direction.LEFT))
+                }
+            }
+
         }
     }
 }
