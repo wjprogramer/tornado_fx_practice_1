@@ -7,6 +7,7 @@ import tornadofx.*
 class HomeView : View("Home View") {
 
     private val view1: View1 by inject()
+    private val tmpView: TmpView by inject()
 
     override val root = vbox {
         label("HomeView")
@@ -19,6 +20,7 @@ class HomeView : View("Home View") {
         }
 
         view1.root
+        tmpView.root
     }
 
     // View 的 root 與 Parent connected 的時候

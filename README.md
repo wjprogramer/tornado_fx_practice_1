@@ -86,7 +86,13 @@ val myStream = resources.stream("somefile")
 
 Resources are relative to the `Component` but you can also retrieve a resource by it's full path, starting with a `/`.
 
+---
 
+
+
+## Keywords
+
+- [powerful closure pattern](https://kotlinlang.org/docs/reference/type-safe-builders.html)
 
 
 
