@@ -5,6 +5,9 @@ import com.example.demo.model.Customer
 import tornadofx.*
 
 class HomeView : View("Home View") {
+
+    private val view1: View1 by inject()
+
     override val root = vbox {
         label("HomeView")
 
@@ -14,6 +17,8 @@ class HomeView : View("Home View") {
                 editCustomer(customer)
             }
         }
+
+        view1.root
     }
 
     // View 的 root 與 Parent connected 的時候

@@ -52,6 +52,44 @@ class `InternalWindow.Styles`
 
 Any Component opened using `openModal()`, `openWindow()` or `openInternalWindow()` can be closed by calling `close()`. It is also possible to get to the `InternalWindow` instance directly if needed using `findParentOfType(InternalWindow::class)`.
 
+## Accessing the Scene
+
+Sometimes it is necessary to get a hold of the current scene from within a `View` or `Fragment`. This can be achieved with `root.scene`, or if you are within a type safe builder, just call `scene`.
+
+## Accessing Resources
+
+Lots of JavaFX APIs takes resources as a `URL` or the `toExternalForm` of an URL. To retrieve a resource url one would typically write something like:
+
+val myAudioClip = AudioClip(MyView::class.java.getResource("mysound.wav").toExternalForm())
+
+However, every `Component` has a `resources` object which can retrieve the external form url of a resource like this:
+
+```kotlin
+val myAudiClip = AudioClip(resources["mysound.wav"])
+```
+
+If you need an actual `URL`, it can be retrieved like this:
+
+```kotlin
+val myResourceURL = resources.url("mysound.wav")
+```
+
+The `resources` helper also has several other helpful functions to help you turn files relative to the `Component` into an object of the type you need:
+
+```kotlin
+val myJsonObject = resources.json("myobject.json")
+val myJsonArray = resources.jsonArray("myarray.json")
+val myStream = resources.stream("somefile")
+```
+
+    It is worth mentioning that the json and jsonArray functions are also available on InputStream objects.
+
+Resources are relative to the `Component` but you can also retrieve a resource by it's full path, starting with a `/`.
+
+
+
+
+
 
 
 
