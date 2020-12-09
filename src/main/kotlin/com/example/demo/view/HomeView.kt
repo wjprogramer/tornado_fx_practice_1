@@ -29,6 +29,7 @@ class HomeView : View("Home View") {
     }
 
     private fun editCustomer(customer: Customer) {
+        // `xxx to xxx` 等價 `Pair(CustomerEditor::customer, customer)`
         find<CustomerEditorFragment>(mapOf(CustomerEditorFragment::customer to customer)).openWindow()
     }
 }
