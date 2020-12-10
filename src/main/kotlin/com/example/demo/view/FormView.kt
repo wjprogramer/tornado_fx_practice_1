@@ -60,7 +60,7 @@ class FormView: View() {
                     // replaceWith<HomeView>()
 
                     // ## Transition
-                    replaceWith(HomeView::class, ViewTransition.Slide(0.3.seconds, ViewTransition.Direction.LEFT))
+                    find(MainView::class).replaceWith(HomeView::class, ViewTransition.Slide(0.3.seconds, ViewTransition.Direction.LEFT))
                 }
             }
 
