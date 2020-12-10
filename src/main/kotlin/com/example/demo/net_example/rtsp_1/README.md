@@ -1,1 +1,0 @@
-https://github.com/berkuguroglu/gstreamer-Java-JavaFX---Manually-Created-and-Linked-Pipeline-with-RTSP-Plugin
