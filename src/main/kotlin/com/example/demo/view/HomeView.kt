@@ -11,6 +11,12 @@ class HomeView : View("Home View") {
     override val root = vbox {
         label("HomeView")
 
+        button("Go MainView") {
+            action {
+                replaceWith(MainView::class)
+            }
+        }
+
         button("Edit Customers") {
             action {
                 val customer = Customer(1, "Jay")
@@ -18,7 +24,17 @@ class HomeView : View("Home View") {
             }
         }
 
-        view1.root
+        button("Login") {
+            action {
+                replaceWith(LoginFormView::class)
+            }
+        }
+
+        button("RtspView") {
+            action {
+                replaceWith(RtspView::class)
+            }
+        }
     }
 
     // View 的 root 與 Parent connected 的時候
